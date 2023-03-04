@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe CountriesService do
   describe "#get_random_country" do
-    it 'can return a random country' do
+    it 'can return a random country', :vcr do
       countries_search = CountriesService.get_random_country
 
       expect(countries_search).to be_an(Hash)
