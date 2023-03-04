@@ -36,6 +36,9 @@ group :development, :test do
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -46,9 +49,6 @@ group :development do
 end
 
 group :test do
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'webmock'
