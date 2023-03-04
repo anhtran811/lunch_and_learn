@@ -86,7 +86,7 @@ describe 'GET /recipes' do
   end
 
   context 'if the user leaves the country parameter empty' do
-    it 'returns an empty array' do
+    it 'returns an empty array', :vcr do
       get "/api/v1/recipes?country="
 
       expect(response).to be_successful
@@ -97,4 +97,17 @@ describe 'GET /recipes' do
       expect(recipe_response[:data]).to eq([])
     end
   end 
+  
+  context 'if the user inputs a country that does not exist' do
+    it 'returns an empty array', :vcr do
+      get "/api/v1/recipes?country=thiscountryisfake"
+    
+      expect(response).to be_successful
+    
+      recipe_response = JSON.parse(response.body, symbolize_names: true)
+    
+      expect(recipe_response).to have_key(:data)
+      expect(recipe_response[:data]).to eq([])
+    end
+  end
 end
