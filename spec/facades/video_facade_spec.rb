@@ -5,7 +5,7 @@ RSpec.describe VideoFacade do
     it 'can return video poro for a country', :vcr do
       video = VideoFacade.get_video("Thailand") 
 
-      expect(video[0]).to be_a(Video)
+      expect(video).to be_a(Video)
     end 
   end
 end
