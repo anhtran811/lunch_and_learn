@@ -1,6 +1,7 @@
 class LearningResourcesFacade
+
   def self.country_resources(country)
-    video_info = YoutubeService.get_video_by_country(country)[:items][0]
-    LearningResource.new(country, video_info)
+    video = VideoFacade.get_video(country)
+    LearningResource.new(country, video)
   end
 end
