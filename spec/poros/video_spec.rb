@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Video do
-  it 'exists and has attributes' do
+  it 'exists and has attributes', :vcr do
     country = "Thailand"
     video_info = VideoFacade.get_video(country)
 

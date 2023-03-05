@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe YoutubeService do
   describe "#get_video_by_country" do
-    it 'returns a video based off country' do
+    it 'returns a video based off country', :vcr do
       country = 'thailand'
       video_info = YoutubeService.get_video_by_country(country)
 
