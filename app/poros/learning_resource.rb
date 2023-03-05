@@ -1,11 +1,11 @@
 class LearningResource
   attr_reader :country,
               :video,
-              :photos
+              :images
 
-  def initialize(country, video, photos)
+  def initialize(country, video, images)
     @country = country
     @video = video
-    @photos = photos
+    @images = images
   end
 end

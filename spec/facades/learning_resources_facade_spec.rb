@@ -8,7 +8,7 @@ RSpec.describe LearningResourcesFacade do
 
       expect(response).to be_a(LearningResource)
       expect(response.country).to eq('Thailand')
-      expect(response.photos).to be_an(Array)
+      expect(response.images).to be_an(Array)
       expect(response.video).to be_an(Array)
       # expect(response.photos[0].url).to eq("bird's eye view of islands")
       # expect(response.photos[0].alt_tag).to eq("www.image-url.com")
