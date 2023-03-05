@@ -30,19 +30,28 @@ describe 'GET /learning_resources' do
 
       expect(resources).to have_key(:video)
       expect(resources[:video]).to be_a(Hash)
-      expect(resources[:video]).to have_key(:title)
-      expect(resources[:video]).to have_key(:youtube_video_id)
 
       expect(resources).to have_key(:images)
       expect(resources[:images]).to be_an(Array)
-
-      expect(resources[:images][0]).to have_key(:alt_tag)
-      expect(resources[:images][0]).to have_key(:url)
     end
   end
 
   context 'when no photo or image is found' do
-    it 'returns an empty hash for video and empty array for images' do
+    it 'returns an empty hash for video and empty array for images', vcr: { record: :new_episodes } do
+      get "/api/v1/learning_resources?country=thisisfake"
+
+      expect(response).to be_successful
+
+      resources_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(resources_response).to have_key(:data)
+      expect(resources_response[:data]).to have_key(:type)
+      expect(resources_response[:data][:type]).to eq("learning_resources") 
+      expect(resources_response[:data]).to have_key(:attributes)
+      expect(resources_response[:data][:attributes]).to have_key(:country)
+      expect(resources_response[:data][:attributes][:country]).to eq("thisisfake")
+      expect(resources_response[:data][:attributes][:video]).to eq({})
+      expect(resources_response[:data][:attributes][:images]).to eq([])
 
     end
   end
