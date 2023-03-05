@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&key=AIzaSyB63jbuxhO-g301FicsFBYPG2l3UQLwndk&maxResults=1&part=snippet&q=thisisfake
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Sun, 05 Mar 2023 21:43:45 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#searchListResponse",
+          "etag": "UBAOiXjvY0CZ7Ub9tJDO9bUtsU8",
+          "regionCode": "US",
+          "pageInfo": {
+            "totalResults": 0,
+            "resultsPerPage": 0
+          },
+          "items": []
+        }
+  recorded_at: Sun, 05 Mar 2023 21:43:45 GMT
+- request:
+    method: get
+    uri: https://api.unsplash.com/photos/random/?client_id=uP3xuHpr2Dn_BVL7I36Vp-YTDqI_eZfK7-N1QDrlfdU&count=10&query=thisisfake
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '57'
+      Server:
+      - Cowboy
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Content-Language:
+      - en
+      Cache-Control:
+      - no-cache
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '49'
+      X-Request-Id:
+      - 8ac62088-c995-4206-bf43-93e85ad52bae
+      X-Runtime:
+      - '0.028015'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 05 Mar 2023 21:43:45 GMT
+      Age:
+      - '1580'
+      X-Served-By:
+      - cache-iad-kcgs7200169-IAD, cache-den8236-DEN
+      X-Cache:
+      - MISS, HIT
+      X-Cache-Hits:
+      - 0, 1
+      X-Timer:
+      - S1678052625.425097,VS0,VE1
+      Vary:
+      - Accept-Encoding, Origin,Authorization,Accept-Language,Accept
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":["No photos found."]}'
+  recorded_at: Sun, 05 Mar 2023 21:43:45 GMT
+recorded_with: VCR 6.1.0
