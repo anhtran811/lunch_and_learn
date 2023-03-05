@@ -9,7 +9,7 @@ RSpec.describe LearningResourcesFacade do
       expect(response).to be_a(LearningResource)
       expect(response.country).to eq('Thailand')
       expect(response.images).to be_an(Array)
-      expect(response.video).to be_an(Hash)
+      expect(response.video).to be_an(Video)
     end
   end
 end
