@@ -1,13 +1,13 @@
 class PhotoFacade
   def self.get_photos(country)
     photos = UnsplashService.get_photos_by_country(country)
-    if photos 
+    if photos[0][:errors]
+      error = []
+      return error
+    else
       photos.map do |photo|
         Photo.new(photo)
       end
-    else
-      error = {}
-      Photo.new(error)
     end
   end
 end
