@@ -2,6 +2,7 @@ class LearningResourcesFacade
 
   def self.country_resources(country)
     video = VideoFacade.get_video(country)
-    LearningResource.new(country, video)
+    photos = PhotoFacade.get_photos(country)
+    LearningResource.new(country, video, photos)
   end
 end
