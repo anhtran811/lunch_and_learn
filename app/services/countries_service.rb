@@ -4,6 +4,11 @@ class CountriesService
     response = conn.get("/v3.1/all?fields=name")
     JSON.parse(response.body, symbolize_names: true).sample
   end
+  
+  def self.get_country(country)
+    response = conn.get("/v3.1/name/#{country}")
+    JSON.parse(response.body, symbolize_names: true)[0]
+  end
 
 private
 
