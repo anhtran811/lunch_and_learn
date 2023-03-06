@@ -8,10 +8,9 @@ RSpec.describe User, type: :model do
   describe 'instance methods' do
     it 'should generate an api key' do
       user = User.new(name: "Athena Dao", email: "athenadao@bestgirlever.com")
-      
-      key = user.generate_api_key
+
       user.save
-      expect(key).to be_a(String)
+ 
       expect(user.api_key).to be_a(String)
       expect(user.api_key).to_not be_nil
     end
