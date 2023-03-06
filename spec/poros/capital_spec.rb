@@ -25,5 +25,7 @@ RSpec.describe Capital do
    capital_attributes = Capital.new(attributes)
 
     expect(capital_attributes.name).to eq('Paris')
+    expect(capital_attributes.longitude).to eq(2.33)
+    expect(capital_attributes.latitude).to eq(48.87)
   end
 end
