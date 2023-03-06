@@ -14,10 +14,10 @@ RSpec.describe CountriesService do
   end
 
   describe "get_country" do
-    it "can return a response for a country" do
+    it "can return a response for a country", :vcr do
       country = "France"
-      country_search = CountriesService.get_country(country)
-      # require 'pry'; binding.pry
+      country_search = CountriesService.get_country_capital(country)
+ 
       expect(country_search).to be_an(Hash)
 
       expect(country_search).to have_key(:capital)

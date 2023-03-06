@@ -5,7 +5,7 @@ class CountriesService
     JSON.parse(response.body, symbolize_names: true).sample
   end
   
-  def self.get_country(country)
+  def self.get_country_capital(country)
     response = conn.get("/v3.1/name/#{country}")
     JSON.parse(response.body, symbolize_names: true)[0]
   end
