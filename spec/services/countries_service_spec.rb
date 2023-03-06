@@ -12,4 +12,16 @@ RSpec.describe CountriesService do
       expect(countries_search[:name][:common]).to be_a(String)
     end
   end
+
+  describe "get_country" do
+    it "can return a response for a country", :vcr do
+      country = "France"
+      country_search = CountriesService.get_country_capital(country)
+ 
+      expect(country_search).to be_an(Hash)
+
+      expect(country_search).to have_key(:capital)
+      expect(country_search).to have_key(:capitalInfo)
+    end
+  end
 end
