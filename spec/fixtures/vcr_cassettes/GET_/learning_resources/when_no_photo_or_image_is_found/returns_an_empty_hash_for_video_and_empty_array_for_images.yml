@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&key=AIzaSyB63jbuxhO-g301FicsFBYPG2l3UQLwndk&maxResults=1&part=snippet&q=thisisfake
+    uri: https://www.googleapis.com/youtube/v3/search?channelId=UCluQ5yInbeAkkeCndNnUhpw&key=<youtube_key>&maxResults=1&part=snippet&q=thisisfake
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Sun, 05 Mar 2023 21:43:45 GMT
+      - Mon, 06 Mar 2023 00:05:25 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -53,10 +53,10 @@ http_interactions:
           },
           "items": []
         }
-  recorded_at: Sun, 05 Mar 2023 21:43:45 GMT
+  recorded_at: Mon, 06 Mar 2023 00:05:25 GMT
 - request:
     method: get
-    uri: https://api.unsplash.com/photos/random/?client_id=uP3xuHpr2Dn_BVL7I36Vp-YTDqI_eZfK7-N1QDrlfdU&count=10&query=thisisfake
+    uri: https://api.unsplash.com/photos/random/?client_id=<unsplash_access_key>&count=10&query=thisisfake
     body:
       encoding: US-ASCII
       string: ''
@@ -95,11 +95,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '50'
       X-Ratelimit-Remaining:
-      - '49'
+      - '47'
       X-Request-Id:
-      - 8ac62088-c995-4206-bf43-93e85ad52bae
+      - '027098dc-6ac9-4576-8c70-69144facb6db'
       X-Runtime:
-      - '0.028015'
+      - '0.023344'
       Strict-Transport-Security:
       - max-age=63072000; includeSubDomains
       Via:
@@ -107,21 +107,21 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Sun, 05 Mar 2023 21:43:45 GMT
+      - Mon, 06 Mar 2023 00:05:26 GMT
       Age:
-      - '1580'
+      - '0'
       X-Served-By:
-      - cache-iad-kcgs7200169-IAD, cache-den8236-DEN
+      - cache-iad-kcgs7200169-IAD, cache-den8249-DEN
       X-Cache:
-      - MISS, HIT
+      - MISS, MISS
       X-Cache-Hits:
-      - 0, 1
+      - 0, 0
       X-Timer:
-      - S1678052625.425097,VS0,VE1
+      - S1678061126.987402,VS0,VE75
       Vary:
       - Accept-Encoding, Origin,Authorization,Accept-Language,Accept
     body:
       encoding: ASCII-8BIT
       string: '{"errors":["No photos found."]}'
-  recorded_at: Sun, 05 Mar 2023 21:43:45 GMT
+  recorded_at: Mon, 06 Mar 2023 00:05:26 GMT
 recorded_with: VCR 6.1.0
