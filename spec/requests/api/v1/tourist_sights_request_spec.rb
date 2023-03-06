@@ -29,8 +29,8 @@ describe 'GET /tourist_sights' do
     expect(tourist_data[:attributes]).to have_key(:name)
     expect(tourist_data[:attributes][:name]).to be_a(String)
 
-    expect(tourist_data[:attributes]).to have_key(:formatted_address)
-    expect(tourist_data[:attributes][:formatted_address]).to be_a(String)
+    expect(tourist_data[:attributes]).to have_key(:address)
+    expect(tourist_data[:attributes][:address]).to be_a(String)
 
     expect(tourist_data[:attributes]).to have_key(:place_id)
     expect(tourist_data[:attributes][:place_id]).to be_a(String)    
