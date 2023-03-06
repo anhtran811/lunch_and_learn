@@ -25,7 +25,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Mon, 06 Mar 2023 00:03:20 GMT
+      - Mon, 06 Mar 2023 00:33:47 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -45,7 +45,7 @@ http_interactions:
       string: |
         {
           "kind": "youtube#searchListResponse",
-          "etag": "D9ey7bA4m2X10kDHNJ1761A8v80",
+          "etag": "FQU2xPJ7n9U7jzVjqziMj_VOtec",
           "nextPageToken": "CAEQAA",
           "regionCode": "US",
           "pageInfo": {
@@ -55,39 +55,39 @@ http_interactions:
           "items": [
             {
               "kind": "youtube#searchResult",
-              "etag": "g_AANaDO0PP_y9-nAEiKyK7DquE",
+              "etag": "FjGlItgy8y2uxZk4LIjMpce7-a4",
               "id": {
                 "kind": "youtube#video",
-                "videoId": "uw8hjVqxMXw"
+                "videoId": "U2YMewwotiQ"
               },
               "snippet": {
-                "publishedAt": "2021-08-29T10:13:10Z",
+                "publishedAt": "2021-01-26T06:23:15Z",
                 "channelId": "UCluQ5yInbeAkkeCndNnUhpw",
-                "title": "A Super Quick History of Laos",
-                "description": "Audio Requiring Attribution: LukeIRL: https://freesound.org/people/LukeIRL/sounds/176134/ RTB45: ...",
+                "title": "A Super Quick History of Indonesia",
+                "description": "Sources: \"A Brief History of Indonesia\" (2015 ) by Tim Hannigan. Tuttle Publishing, North Clarendon, VT.",
                 "thumbnails": {
                   "default": {
-                    "url": "https://i.ytimg.com/vi/uw8hjVqxMXw/default.jpg",
+                    "url": "https://i.ytimg.com/vi/U2YMewwotiQ/default.jpg",
                     "width": 120,
                     "height": 90
                   },
                   "medium": {
-                    "url": "https://i.ytimg.com/vi/uw8hjVqxMXw/mqdefault.jpg",
+                    "url": "https://i.ytimg.com/vi/U2YMewwotiQ/mqdefault.jpg",
                     "width": 320,
                     "height": 180
                   },
                   "high": {
-                    "url": "https://i.ytimg.com/vi/uw8hjVqxMXw/hqdefault.jpg",
+                    "url": "https://i.ytimg.com/vi/U2YMewwotiQ/hqdefault.jpg",
                     "width": 480,
                     "height": 360
                   }
                 },
                 "channelTitle": "Mr History",
                 "liveBroadcastContent": "none",
-                "publishTime": "2021-08-29T10:13:10Z"
+                "publishTime": "2021-01-26T06:23:15Z"
               }
             }
           ]
         }
-  recorded_at: Mon, 06 Mar 2023 00:03:20 GMT
+  recorded_at: Mon, 06 Mar 2023 00:33:47 GMT
 recorded_with: VCR 6.1.0

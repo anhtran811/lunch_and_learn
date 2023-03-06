@@ -5,7 +5,14 @@ RSpec.describe Video do
     country = "Thailand"
     video_info = VideoFacade.get_video(country)
 
-    expect(video_info.title).to eq('A Super Quick History of Laos')
-    expect(video_info.youtube_video_id).to eq('uw8hjVqxMXw')
+    attributes = {
+      id: { videoId: "uw8hjVqxMXw" },
+      snippet: { title: "A Super Quick History of Laos" }
+    }
+
+    video = Video.new(attributes)
+
+    expect(video.title).to eq('A Super Quick History of Laos')
+    expect(video.youtube_video_id).to eq('uw8hjVqxMXw')
   end
 end
