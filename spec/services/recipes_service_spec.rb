@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RecipesService do
   describe '#get_recipes_by_country' do
-    it 'can return recipes for a specified country' do
+    it 'can return recipes for a specified country', :vcr do
       recipes = RecipesService.get_recipes_by_country("Thailand")
 
       expect(recipes).to be_a(Hash)
