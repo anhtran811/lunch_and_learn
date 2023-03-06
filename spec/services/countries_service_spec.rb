@@ -24,13 +24,4 @@ RSpec.describe CountriesService do
       expect(country_search).to have_key(:capitalInfo)
     end
   end
-
-  # describe "#get_capital_city" do
-  #   xit 'can return the capital city of a country', do
-  #     country = "France"
-  #     capital_search = CountriesServices.get_capital_city(country)
-
-
-  #   end
-  # end
 end
