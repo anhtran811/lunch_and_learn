@@ -37,7 +37,7 @@ describe 'GET /learning_resources' do
   end
 
   context 'when no photo or image is found' do
-    xit 'returns an empty hash for video and empty array for images', vcr: { record: :new_episodes } do
+    it 'returns an empty hash for video and empty array for images', vcr: { record: :new_episodes } do
       get "/api/v1/learning_resources?country=thisisfake"
 
       expect(response).to be_successful
@@ -52,7 +52,6 @@ describe 'GET /learning_resources' do
       expect(resources_response[:data][:attributes][:country]).to eq("thisisfake")
       expect(resources_response[:data][:attributes][:video]).to eq({})
       expect(resources_response[:data][:attributes][:images]).to eq([])
-
     end
   end
 end
