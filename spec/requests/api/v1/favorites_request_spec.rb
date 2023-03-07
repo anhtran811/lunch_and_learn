@@ -14,7 +14,7 @@ describe 'POST /favorites' do
 
       headers = { "CONTENT_TYPE" => "application/json" }
 
-      post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite: favorite_params)
+      post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite_params)
       
       new_favorite = Favorite.last 
 
@@ -37,7 +37,7 @@ describe 'POST /favorites' do
 
       headers = { "CONTENT_TYPE" => "application/json" }
 
-      post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite: favorite_params)
+      post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite_params)
       
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
@@ -56,7 +56,7 @@ describe 'POST /favorites' do
 
       headers = { "CONTENT_TYPE" => "application/json" }
 
-      post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite: favorite_params)
+      post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite_params)
       
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
@@ -75,7 +75,7 @@ describe 'POST /favorites' do
 
       headers = { "CONTENT_TYPE" => "application/json" }
 
-      post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite: favorite_params)
+      post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite_params)
       
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
@@ -94,7 +94,7 @@ describe 'POST /favorites' do
 
       headers = { "CONTENT_TYPE" => "application/json" }
 
-      post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite: favorite_params)
+      post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite_params)
       
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
