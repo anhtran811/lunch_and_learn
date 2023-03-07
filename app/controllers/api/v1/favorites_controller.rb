@@ -1,8 +1,11 @@
 class Api::V1::FavoritesController < ApplicationController
   def create
-    user = User.find_by(api_key: params[:favorite][:api_key])
-    favorite_recipe = user.favorites.create!(favorite_params)
-    render json: { "success": "Favorite added successfully" }, status: 201
+    if user = User.find_by(api_key: params[:favorite][:api_key])
+      user.favorites.create!(favorite_params)
+      render json: { "success": "Favorite added successfully" }, status: 201
+    else
+      render json: { "error": "Unable to save favorite recipe" }, status: 400
+    end
   end
 
 
