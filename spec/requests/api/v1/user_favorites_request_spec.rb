@@ -55,4 +55,16 @@ describe 'GET /favorites?api_key' do
       expect(favorites_response[:data]).to eq([])
     end
   end
+
+  context "when the user's api key does not exist" do
+    it 'returns an error message' do
+      user = create(:user)
+      
+      get "/api/v1/favorites?api_key=12345" 
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+      expect(response.body).to eq("{\"error\":\"Unable to find user\"}")
+    end
+  end
 end
