@@ -3,7 +3,6 @@ class Api::V1::LearningResourcesController < ApplicationController
     if params[:country]
       render json: LearningResourcesSerializer.new(LearningResourcesFacade.country_resources(params[:country]))
     else
-
     end
   end
 end

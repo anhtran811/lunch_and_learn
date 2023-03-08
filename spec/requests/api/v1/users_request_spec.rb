@@ -32,10 +32,12 @@ describe 'POST /users' do
       headers = {"CONTENT_TYPE" => "application/json" }
       
       post '/api/v1/users', headers: headers, params: JSON.generate(user: user_params)
+
       response_body = JSON.parse(response.body, symbolize_names: true)
+
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-      expect(response_body[:errors]).to eq("User was not created")
+      expect(response_body[:error]).to eq("User was not created")
     end
 
     it 'returns an error message when email is left blank' do
@@ -47,10 +49,12 @@ describe 'POST /users' do
       headers = {"CONTENT_TYPE" => "application/json" }
       
       post '/api/v1/users', headers: headers, params: JSON.generate(user: user_params)
+
       response_body = JSON.parse(response.body, symbolize_names: true)
+
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-      expect(response_body[:errors]).to eq("User was not created")
+      expect(response_body[:error]).to eq("User was not created")
     end
 
     it 'returns an error message when email is not unique' do
@@ -64,10 +68,12 @@ describe 'POST /users' do
       headers = {"CONTENT_TYPE" => "application/json" }
       
       post '/api/v1/users', headers: headers, params: JSON.generate(user: user_params)
+
       response_body = JSON.parse(response.body, symbolize_names: true)
+      
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-      expect(response_body[:errors]).to eq("Email is not unique")
+      expect(response_body[:error]).to eq("Email is not unique")
     end
   end
 end
