@@ -62,9 +62,11 @@ describe 'GET /favorites?api_key' do
       
       get "/api/v1/favorites?api_key=12345" 
 
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-      expect(response.body).to eq("{\"error\":\"Unable to find user\"}")
+      expect(response_body[:error]).to eq("Unable to find user")
     end
   end
 end

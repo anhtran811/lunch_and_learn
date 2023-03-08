@@ -16,11 +16,13 @@ describe 'POST /favorites' do
 
       post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite_params)
       
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
       new_favorite = Favorite.last 
 
       expect(response).to be_successful
       expect(response.status).to eq(201)
-      expect(response.body).to eq("{\"success\":\"Favorite added successfully\"}")
+      expect(response_body[:success]).to eq("Favorite added successfully")
     end
   end
 
@@ -39,9 +41,11 @@ describe 'POST /favorites' do
 
       post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite_params)
       
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-      expect(response.body).to eq("{\"error\":\"Unable to save favorite recipe\"}")
+      expect(response_body[:error]).to eq("Unable to save favorite recipe")
     end
 
     it 'returns an error message if the country is left blank' do
@@ -57,10 +61,12 @@ describe 'POST /favorites' do
       headers = { "CONTENT_TYPE" => "application/json" }
 
       post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite_params)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-      expect(response.body).to eq("{\"error\":[{\"title\":\"Validation failed: Country can't be blank\",\"status\":\"400\"}]}")
+      expect(response_body[:error][0][:title]).to eq("Validation failed: Country can't be blank")
     end
 
     it 'returns an error message if the recipe link is left blank' do
@@ -76,10 +82,12 @@ describe 'POST /favorites' do
       headers = { "CONTENT_TYPE" => "application/json" }
 
       post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite_params)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-      expect(response.body).to eq("{\"error\":[{\"title\":\"Validation failed: Recipe link can't be blank\",\"status\":\"400\"}]}")
+      expect(response_body[:error][0][:title]).to eq("Validation failed: Recipe link can't be blank") 
     end
     
     it 'returns an error message if the recipe title is left blank' do
@@ -95,10 +103,12 @@ describe 'POST /favorites' do
       headers = { "CONTENT_TYPE" => "application/json" }
 
       post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite_params)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-      expect(response.body).to eq("{\"error\":[{\"title\":\"Validation failed: Recipe title can't be blank\",\"status\":\"400\"}]}")
+      expect(response_body[:error][0][:title]).to eq("Validation failed: Recipe title can't be blank")     
     end
   end
 end

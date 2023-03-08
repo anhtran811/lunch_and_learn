@@ -4,9 +4,9 @@ class Api::V1::UsersController < ApplicationController
     if user.save
       render json: UserSerializer.new(user), status: :created
     elsif User.find_by(email: params[:user][:email])
-      render json: { errors: "Email is not unique" }, status: 400
+      render json: ErrorSerializer.invalid_parameters("Email is not unique"), status: 400
     else
-      render json: { errors: "User was not created" }, status: 400
+      render json: ErrorSerializer.invalid_parameters("User was not created"), status: 400
     end
   end
 
