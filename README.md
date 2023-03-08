@@ -4,7 +4,7 @@
 
 # :fork_and_knife:Lunch and Learn:yum:
 
-This application exposes backend endpoints for a future frontend application to consume. Working in a service-oriented architecture the frontend will communicate with this appplication through an API in order to build an application that searches for cuisines by country, and provide the user an opportunity to favorite recipes while learning more about the country's culture.
+This application exposes backend endpoints for a future frontend application to consume. Working in a service-oriented architecture the frontend will communicate with this application through an API in order to build an application that searches for cuisines by country, and provide the user an opportunity to favorite recipes while learning more about the country's culture.
 
 This project follows guidelines set in place by Turing School of Software & Design. For more information on project requirements: [Lunch and Learn](https://backend.turing.edu/module3/projects/lunch_and_learn/requirements)
 
